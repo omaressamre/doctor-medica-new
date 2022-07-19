@@ -7,12 +7,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:medica/doctor/doctor_getstarted.dart';
 import 'package:medica/doctor/doctor_register.dart';
 import 'package:medica/myAppointments.dart';
 import 'package:medica/patient/aboutus.dart';
 import 'package:medica/patient/find_doctor_near.dart';
 import 'package:medica/patient/patient_book.dart';
-import 'package:medica/patient/patient_getstarted.dart';
 import 'package:medica/patient/patient_home.dart';
 import 'package:medica/patient/patient_profiledata.dart';
 import 'package:medica/screens/home_page.dart';
@@ -272,7 +272,7 @@ class patient_profile extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(40)),
                           ),
                           onPressed: () {
-                            Get.to(() => patient_getstarted());
+                            Get.to(() => doctor_getstarted());
                           },
                           child: Padding(
                             padding: EdgeInsets.symmetric(

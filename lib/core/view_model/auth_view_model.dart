@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:medica/doctor/doctor_home.dart';
-import 'package:medica/patient/patient_getstarted.dart';
 import 'package:path/path.dart';
 import 'package:medica/patient/patient_home.dart';
 

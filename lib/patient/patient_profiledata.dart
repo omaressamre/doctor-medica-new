@@ -9,7 +9,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:medica/patient/find_doctor_near.dart';
 import 'package:medica/patient/patient_book.dart';
-import 'package:medica/patient/patient_getstarted.dart';
 import 'package:medica/patient/patient_home.dart';
 import 'package:medica/patient/patient_profile.dart';
 import 'package:medica/view/widgets/HomeCurve.dart';

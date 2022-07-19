@@ -14,7 +14,6 @@ import 'package:medica/doctor/doctor_getstarted.dart';
 import 'package:medica/doctor/doctor_home.dart';
 import 'package:medica/patient/doctor_profile.dart';
 import 'package:medica/patient/find_doctor_near.dart';
-import 'package:medica/patient/patient_getstarted.dart';
 import 'package:medica/patient/patient_home.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

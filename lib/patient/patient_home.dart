@@ -7,11 +7,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:medica/Covid19Detector.dart';
+import 'package:medica/doctor/doctor_getstarted.dart';
 import 'package:medica/myAppointments.dart';
 import 'package:medica/patient/find_doctor_near.dart';
 import 'package:medica/patient/patient_book.dart';
-import 'package:medica/patient/patient_getstarted.dart';
 import 'package:medica/patient/patient_profile.dart';
 import 'package:medica/screens/catalog_screen.dart';
 import 'package:medica/screens/home_page.dart';
@@ -96,7 +95,7 @@ class patient_home extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async {
         // Get.to(loginAs());
-        Get.to(() => patient_getstarted());
+        Get.to(() => doctor_getstarted());
         return true;
       },
       child: Scaffold(
@@ -251,7 +250,6 @@ class patient_home extends StatelessWidget {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(15)))),
                           onPressed: () {
-                            Get.to(() => Covid19Detector());
                           },
                           child: Padding(
                             padding: EdgeInsets.symmetric(
