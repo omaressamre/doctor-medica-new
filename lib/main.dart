@@ -79,10 +79,11 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           initialBinding: Binding(),
           debugShowCheckedModeBanner: false,
-          home: isUserLoggedIn
-              ? patient_home.withuser(
-                  prefs.getString(FirestoreConstants.displayName) as String)
-              : patient_getstarted(),
+          // home: isUserLoggedIn
+          //     ? patient_home.withuser(
+          //         prefs.getString(FirestoreConstants.displayName) as String)
+          //     : patient_getstarted(),
+          home: doctor_getstarted(),
         );
       }),
     );

@@ -5,7 +5,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:medica/doctor/doctor_getstarted.dart';
 import 'package:medica/doctor/doctor_register.dart';
-import 'package:medica/patient/patient_login.dart';
 import 'package:medica/providers/auth_provider.dart';
 import 'package:medica/view/widgets/LnRCurve.dart';
 import 'package:medica/view/widgets/constance.dart';

@@ -2,8 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medica/patient/patient_login.dart';
-import 'package:medica/patient/patient_register.dart';
 import 'package:medica/view/widgets/constance.dart';
 import 'package:medica/view/widgets/custom_background.dart';
 import 'package:medica/view/widgets/custom_text.dart';
@@ -72,9 +70,7 @@ class patient_getstarted extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextButton(
-                          onPressed: () {
-                            Get.to(() => patient_register());
-                          },
+                          onPressed: () {},
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.symmetric(
                                 horizontal: 50, vertical: 17),
@@ -97,7 +93,6 @@ class patient_getstarted extends StatelessWidget {
                       ),
                       TextButton(
                           onPressed: () {
-                            Get.to(() => PatientLogin());
                           },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.symmetric(

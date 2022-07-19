@@ -10,12 +10,9 @@ import 'package:get/get.dart';
 import 'package:medica/Covid19Detector.dart';
 import 'package:medica/myAppointments.dart';
 import 'package:medica/patient/find_doctor_near.dart';
-import 'package:medica/patient/patient_login.dart';
 import 'package:medica/patient/patient_book.dart';
 import 'package:medica/patient/patient_getstarted.dart';
 import 'package:medica/patient/patient_profile.dart';
-import 'package:medica/patient/patient_register.dart';
-import 'package:medica/patient/patient_symptoms.dart';
 import 'package:medica/screens/catalog_screen.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/screens/login_page.dart';
@@ -45,9 +42,7 @@ class patient_home extends StatelessWidget {
     Depts(
       deptName: 'Biochem',
       icon: 'assets/images/depts/BioChem.png',
-      onPressed: () {
-        Get.to(() => patient_symptoms());
-      },
+      onPressed: () {      },
     ),
     Depts(
       deptName: 'Research',
@@ -351,9 +346,7 @@ class patient_home extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(15)))),
-                          onPressed: () {
-                            Get.to(() => patient_symptoms());
-                          },
+                          onPressed: () {},
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: size.width * 0.03),

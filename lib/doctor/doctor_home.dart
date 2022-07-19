@@ -9,7 +9,6 @@ import 'package:medica/doctor/doctor_getstarted.dart';
 import 'package:medica/doctor/doctor_login.dart';
 import 'package:medica/doctor/selectSpeciality.dart';
 import 'package:medica/patient/patient_book.dart';
-import 'package:medica/patient/patient_symptoms.dart';
 import 'package:medica/view/widgets/HomeCurve.dart';
 import 'package:medica/view/widgets/LnRCurve.dart';
 import 'package:medica/view/widgets/constance.dart';
@@ -251,9 +250,7 @@ class doctor_home extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(15)))),
-                                onPressed: () {
-                                  Get.to(() => patient_symptoms());
-                                },
+                                onPressed: () {},
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
                                       horizontal: size.width * 0.03),
