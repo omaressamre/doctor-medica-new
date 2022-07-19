@@ -1,0 +1,78 @@
+{
+  "project_info": {
+    "project_number": "456251685387",
+    "project_id": "medica-968bd",
+    "storage_bucket": "medica-968bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456251685387:android:2416fc61fd53571c62a50e",
+        "android_client_info": {
+          "package_name": "com.example.medica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456251685387-0n8r35q5l8dk51abhktlj61h3i6sevtq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medica",
+            "certificate_hash": "50ced116ed55c1f769d46ddb696cb8857010a88e"
+          }
+        },
+        {
+          "client_id": "456251685387-acvsbm75nc0fimh608g5q3pvv9cp8ct8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medica",
+            "certificate_hash": "de7d93581de4091c5b70c8d0f55f24e204341097"
+          }
+        },
+        {
+          "client_id": "456251685387-qo50noo1km7qrni3hl7ijtkrle2h507h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medica",
+            "certificate_hash": "b51ceff333d497350a6831254b6a075f0778c23f"
+          }
+        },
+        {
+          "client_id": "456251685387-udslhogs9qcm07u5hqt0soib3gism05h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medica",
+            "certificate_hash": "57abb40c7844d37257f09e9a9229e7ee73f08df7"
+          }
+        },
+        {
+          "client_id": "456251685387-76ee9qjjd5dh58he7bf4n609a44o7r50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNwo2LShgpA-YJ1byhqlOZh7ByhgTI6s8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456251685387-76ee9qjjd5dh58he7bf4n609a44o7r50.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "456251685387-69rcm00d40f1sai7357j2ecu9240a4h0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.medica"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

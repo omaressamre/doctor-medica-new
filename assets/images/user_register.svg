@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="USer" transform="translate(-172 -111)">
+    <circle id="BG" cx="35" cy="35" r="35" transform="translate(172 111)" fill="#f8f8f8"/>
+    <g id="user-2" data-name="user" transform="translate(185 121.5)">
+      <path id="Vector" d="M30,11.25V7.5A7.5,7.5,0,0,0,22.5,0H7.5A7.5,7.5,0,0,0,0,7.5v3.75" transform="translate(7.5 28.125)" fill="none" stroke="#612eaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Vector-2" data-name="Vector" d="M15,7.5A7.5,7.5,0,1,1,7.5,0,7.5,7.5,0,0,1,15,7.5Z" transform="translate(15 5.625)" fill="none" stroke="#612eaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+    <g id="Group_1" data-name="Group 1" transform="translate(-1 -1)">
+      <circle id="Ellipse_1" data-name="Ellipse 1" cx="6" cy="6" r="6" transform="translate(228 166)" fill="#fff"/>
+      <path id="Path_17" data-name="Path 17" d="M16.71,8.21a8.5,8.5,0,1,0,8.5,8.5,8.5,8.5,0,0,0-8.5-8.5Zm3.319,9.036H17.246v2.783a.536.536,0,0,1-1.072,0V17.246H13.391a.536.536,0,0,1,0-1.072h2.783V13.391a.536.536,0,0,1,1.072,0v2.783h2.783a.536.536,0,0,1,0,1.072Z" transform="translate(217.79 156.79)" fill="#612eaa"/>
+    </g>
+  </g>
+</svg>

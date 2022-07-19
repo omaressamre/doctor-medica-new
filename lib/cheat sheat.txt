@@ -1,0 +1,44 @@
+Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => yourpage(),
+        ));
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Button to another page-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+CarouselSlider(
+          // ignore: prefer_const_literals_to_create_immutables
+          items: [
+            // ignore: prefer_const_constructors
+            Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: const CustomText(
+                text: 'Great',
+                textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28.0,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+            // ignore: prefer_const_constructors
+            Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: const CustomText(
+                text: 'Instant',
+                textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28.0,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+          ],
+          //Slider Container properties
+          options: CarouselOptions(
+            autoPlay: true,
+            height: 30.0,
+          ),
+        ),

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.785" height="14" viewBox="0 0 17.785 14">
+  <g id="Mail" transform="translate(-40.107 -480)">
+    <g id="mail-2" data-name="mail" transform="translate(40 478)">
+      <path id="Vector" d="M1.5,0h12A1.5,1.5,0,0,1,15,1.5v9A1.5,1.5,0,0,1,13.5,12H1.5A1.5,1.5,0,0,1,0,10.5v-9A1.5,1.5,0,0,1,1.5,0Z" transform="translate(1.5 3)" fill="none" stroke="#f95dde" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Vector-2" data-name="Vector" d="M15,0,7.5,5.25,0,0" transform="translate(1.5 4.5)" fill="none" stroke="#f95dde" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
