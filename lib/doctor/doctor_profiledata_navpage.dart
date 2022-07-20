@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 import 'package:medica/patient/find_doctor_near.dart';
 import 'package:medica/patient/patient_book.dart';
 import 'package:medica/patient/patient_home.dart';
-import 'package:medica/patient/patient_profile.dart';
+import 'package:medica/doctor/doctor_profile_navpage.dart';
 import 'package:medica/view/widgets/HomeCurve.dart';
 import 'package:medica/view/widgets/LnRCurve.dart';
 import 'package:medica/view/widgets/constance.dart';
@@ -48,7 +48,7 @@ class patient_profiledata extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async {
         // Get.to(loginAs());
-        Get.to(() => patient_profile());
+        Get.to(() => doctor_profilenav());
         return true;
       },
       child: Scaffold(
@@ -319,7 +319,7 @@ class patient_profiledata extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.to(() => patient_profile());
+                            Get.to(() => doctor_profilenav());
                           },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

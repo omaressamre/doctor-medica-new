@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:medica/patient/patient_home.dart';
-import 'package:medica/patient/patient_profile.dart';
+import 'package:medica/doctor/doctor_profile_navpage.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/screens/login_page.dart';
 import 'package:medica/view/widgets/HomeCurve.dart';
@@ -294,7 +294,7 @@ class patient_book extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              Get.to(() => patient_profile());
+                              Get.to(() => doctor_profilenav());
                             },
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,

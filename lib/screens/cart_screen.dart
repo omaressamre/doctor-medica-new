@@ -12,7 +12,7 @@ import 'package:medica/view/widgets/custom_text.dart';
 
 import '../controllers/cart_controller.dart';
 import '../patient/patient_home.dart';
-import '../patient/patient_profile.dart';
+import '../doctor/doctor_profile_navpage.dart';
 import '../view/widgets/custom_background.dart';
 
 class CartScreen extends StatelessWidget {
@@ -334,7 +334,7 @@ class CartScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Get.to(() => patient_profile());
+                          Get.to(() => doctor_profilenav());
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,

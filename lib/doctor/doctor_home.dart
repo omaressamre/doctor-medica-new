@@ -1,12 +1,14 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, unused_import, unnecessary_import, import_of_legacy_library_into_null_safe, must_be_immutable, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, await_only_futures, unnecessary_new, empty_constructor_bodies
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:medica/doctor/doctor_getstarted.dart';
 import 'package:medica/doctor/doctor_login.dart';
+import 'package:medica/doctor/doctor_profile_navpage.dart';
 import 'package:medica/doctor/selectSpeciality.dart';
 import 'package:medica/patient/patient_book.dart';
 import 'package:medica/view/widgets/HomeCurve.dart';
@@ -24,7 +26,6 @@ class doctor_home extends StatelessWidget {
   doctor_home() : _name = "DEFAULT";
 
   doctor_home.withuser(this._name);
-
 
   String _name;
 
@@ -52,6 +53,15 @@ class doctor_home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final user = FirebaseAuth.instance.currentUser;
+    dynamic email = '';
+    dynamic name = '';
+    dynamic picture = '';
+    if (user != null) {
+      email = user.email;
+      name = user.displayName;
+      picture = user.photoURL;
+    }
     return WillPopScope(
       onWillPop: () async {
         // Get.to(loginAs());
@@ -85,13 +95,30 @@ class doctor_home extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Image.asset('assets/images/Menu.png'),
-                      CustomText(
-                        text: name,
-                        textStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w600),
+                                            Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                  margin:
+                                      EdgeInsets.only(right: size.width * 0.03),
+                                  child: picture != ''
+                                      ? CircleAvatar(
+                                          backgroundImage:
+                                              NetworkImage(picture))
+                                      : CircleAvatar(
+                                          backgroundColor: Colors.green)),
+                              CustomText(
+                                text: name,
+                                textStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontFamily: 'DMSans',
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                       Image.asset('assets/images/Notify.png')
                     ],
@@ -528,7 +555,9 @@ class doctor_home extends StatelessWidget {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(() => doctor_profilenav());
+                          },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

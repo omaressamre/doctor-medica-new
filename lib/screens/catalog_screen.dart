@@ -9,7 +9,7 @@ import 'package:medica/screens/cart_screen.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/view/widgets/catalog_products.dart';
 
-import '../patient/patient_profile.dart';
+import '../doctor/doctor_profile_navpage.dart';
 import '../view/widgets/constance.dart';
 import '../view/widgets/custom_background.dart';
 import '../view/widgets/custom_text.dart';
@@ -262,7 +262,7 @@ class CatalogScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Get.to(() => patient_profile());
+                          Get.to(() => doctor_profilenav());
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,

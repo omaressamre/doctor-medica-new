@@ -11,7 +11,7 @@ import 'package:medica/doctor/doctor_getstarted.dart';
 import 'package:medica/myAppointments.dart';
 import 'package:medica/patient/find_doctor_near.dart';
 import 'package:medica/patient/patient_book.dart';
-import 'package:medica/patient/patient_profile.dart';
+import 'package:medica/doctor/doctor_profile_navpage.dart';
 import 'package:medica/screens/catalog_screen.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/screens/login_page.dart';
@@ -649,7 +649,7 @@ class patient_home extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.to(() => patient_profile());
+                            Get.to(() => doctor_profilenav());
                           },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

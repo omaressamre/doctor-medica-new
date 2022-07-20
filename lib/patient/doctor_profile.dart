@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:medica/patient/appointment_time.dart';
-import 'package:medica/patient/patient_profile.dart';
+import 'package:medica/doctor/doctor_profile_navpage.dart';
 import 'package:medica/view/widgets/constance.dart';
 import 'package:medica/view/widgets/custom_text.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
@@ -666,7 +666,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                             ),
                             TextButton(
                               onPressed: () {
-                                Get.to(() => patient_profile());
+                                Get.to(() => doctor_profilenav());
                               },
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,

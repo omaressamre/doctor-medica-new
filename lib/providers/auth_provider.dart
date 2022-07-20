@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:medica/allConstants/firestore_constants.dart';
+import 'package:medica/doctor/doctor_getstarted.dart';
 import 'package:medica/doctor/doctor_home.dart';
+import 'package:medica/view/widgets/constance.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:medica/allConstants/all_constants.dart';
 import 'package:medica/models/chat_user.dart';
@@ -122,8 +124,8 @@ class AuthProvider extends ChangeNotifier {
   Future<void> googleSignOut() async {
     _status = Status.uninitialized;
     await firebaseAuth.signOut();
-    await googleSignIn.disconnect();
-    await googleSignIn.signOut();
+    prefs.setBool(k_dockeepMeLoggedIn, false);
+    Get.offAll(() => doctor_getstarted());
   }
 
   Future<User?> registerUsingEmailPassword({

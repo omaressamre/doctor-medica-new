@@ -8,13 +8,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:medica/doctor/doctor_getstarted.dart';
+import 'package:medica/doctor/doctor_home.dart';
 import 'package:medica/doctor/doctor_register.dart';
 import 'package:medica/myAppointments.dart';
 import 'package:medica/patient/aboutus.dart';
 import 'package:medica/patient/find_doctor_near.dart';
 import 'package:medica/patient/patient_book.dart';
 import 'package:medica/patient/patient_home.dart';
-import 'package:medica/patient/patient_profiledata.dart';
+import 'package:medica/doctor/doctor_profiledata_navpage.dart';
+import 'package:medica/providers/auth_provider.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/screens/login_page.dart';
 import 'package:medica/view/widgets/HomeCurve.dart';
@@ -28,9 +30,10 @@ import 'package:medica/view/widgets/profile_icons_icons.dart';
 import 'package:medica/view/widgets/wavey_shape.dart';
 import 'package:medica/core/view_model/auth_view_model.dart';
 import 'package:path/path.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class patient_profile extends StatelessWidget {
+class doctor_profilenav extends StatelessWidget {
   /*  String _name;
 
   String get name => _name;
@@ -43,6 +46,8 @@ class patient_profile extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final user = FirebaseAuth.instance.currentUser;
+    final authProvider = Provider.of<AuthProvider>(context);
+
     dynamic email = '';
     dynamic name = '';
     dynamic picture = '';
@@ -272,7 +277,7 @@ class patient_profile extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(40)),
                           ),
                           onPressed: () {
-                            Get.to(() => doctor_getstarted());
+                            authProvider.googleSignOut();
                           },
                           child: Padding(
                             padding: EdgeInsets.symmetric(
@@ -427,7 +432,7 @@ class patient_profile extends StatelessWidget {
                       children: [
                         TextButton(
                           onPressed: () {
-                            Get.to(() => patient_home());
+                            Get.to(() => doctor_home());
                           },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

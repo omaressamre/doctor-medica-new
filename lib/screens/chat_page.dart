@@ -24,7 +24,7 @@ import 'package:medica/screens/login_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../patient/patient_home.dart';
-import '../patient/patient_profile.dart';
+import '../doctor/doctor_profile_navpage.dart';
 import '../view/widgets/catalog_products.dart';
 import '../view/widgets/custom_text.dart';
 import 'cart_screen.dart';
@@ -449,7 +449,7 @@ class _ChatPageState extends State<ChatPage> {
                                     ),
                                     TextButton(
                                       onPressed: () {
-                                        Get.to(() => patient_profile());
+                                        Get.to(() => doctor_profilenav());
                                       },
                                       child: Column(
                                         mainAxisAlignment:

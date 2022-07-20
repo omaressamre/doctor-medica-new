@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import 'package:medica/myAppointments.dart';
 import 'package:medica/patient/patient_book.dart';
 import 'package:medica/patient/patient_home.dart';
-import 'package:medica/patient/patient_profile.dart';
+import 'package:medica/doctor/doctor_profile_navpage.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/view/widgets/HomeCurve.dart';
 import 'package:medica/view/widgets/LnRCurve.dart';
@@ -346,7 +346,7 @@ class _patient_findState extends State<patient_find> {
                             ),
                             TextButton(
                               onPressed: () {
-                                Get.to(() => patient_profile());
+                                Get.to(() => doctor_profilenav());
                               },
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
