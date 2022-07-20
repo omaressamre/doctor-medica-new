@@ -153,7 +153,7 @@ class doctor_profilenav extends StatelessWidget {
                             child: Row(
                               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                SvgPicture.asset('assets/images/User.svg'),
+                                SvgPicture.asset('assets/images/User.svg',color: secondaryColor,),
                                 SizedBox(width: size.width * 0.04),
                                 CustomText(
                                   text: 'Profile',
@@ -243,7 +243,7 @@ class doctor_profilenav extends StatelessWidget {
                               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 SvgPicture.asset(
-                                    'assets/images/information-svgrepo-com.svg'),
+                                    'assets/images/information-svgrepo-com.svg',color: secondaryColor,),
                                 SizedBox(width: size.width * 0.04),
                                 CustomText(
                                   text: 'About us',
