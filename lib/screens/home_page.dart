@@ -198,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                     child: StreamBuilder<QuerySnapshot>(
                       stream: homeProvider.getFirestoreData(
-                          FirestoreConstants.pathDoctorCollection,
+                          FirestoreConstants.pathUserCollection,
                           _limit,
                           _textSearch),
                       builder: (BuildContext context,
@@ -368,7 +368,7 @@ class _HomePageState extends State<HomePage> {
                     size: 50,
                   ),
             title: Text(
-              "Dr. ${userChat.displayName}",
+              "${userChat.displayName}",
               style: const TextStyle(color: Colors.black),
             ),
           ),
