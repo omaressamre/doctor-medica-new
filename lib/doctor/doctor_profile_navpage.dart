@@ -453,27 +453,6 @@ class doctor_profilenav extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.to(() => patient_book());
-                          },
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SvgPicture.asset(
-                                  'assets/images/clipboardNavBarHome.svg',
-                                  color: primaryColorOutOfFocus),
-                              SizedBox(
-                                height: size.height * 0.008,
-                              ),
-                              CustomText(
-                                text: 'Consult',
-                                textStyle:
-                                    TextStyle(color: primaryColorOutOfFocus),
-                              )
-                            ],
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
                             Get.to(() => HomePage());
                           },
                           child: Column(
