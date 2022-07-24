@@ -24,41 +24,35 @@ import 'package:medica/view/widgets/wavey_shape.dart';
 import 'package:medica/core/view_model/auth_view_model.dart';
 import 'package:get/get.dart';
 
-class doctor_home extends StatelessWidget {
+class doctor_home extends StatefulWidget {
   doctor_home() : _name = "DEFAULT";
 
   doctor_home.withuser(this._name);
 
   String _name;
 
-  String get name => _name;
+  @override
+  State<doctor_home> createState() => _doctor_homeState();
+}
+
+class _doctor_homeState extends State<doctor_home> {
+  String get name => widget._name;
 
   set name(String name) {
-    _name = name;
+    widget._name = name;
   }
 
   // final numbers = List.generate(100, (index) => '$index');
-
-//   Widget buildGridView() => GridView.builder(
-//         gridDelegate:
-//             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-//         itemCount: numbers.length,
-//         itemBuilder: (context, index) {
-//           final item = numbers[index];
-//           return buildNumber(item);
-//         },
-//       );
-//   Widget buildNumber(String number) => Container(
-//     child: GridTile(header: Text,),
-//   );
-
+  FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseFirestore store = FirebaseFirestore.instance;
+  dynamic patientnames = [];
+  late String? docname = auth.currentUser?.displayName;
+  dynamic days = [];
+  dynamic times = [];
   @override
   Widget build(BuildContext context) {
     var user_appointment_codes = [];
-    FirebaseAuth auth = FirebaseAuth.instance;
-    late String? docnames = auth.currentUser?.displayName;
-    dynamic days = [];
-    dynamic patientnames = [];
+
     final Size size = MediaQuery.of(context).size;
     final user = FirebaseAuth.instance.currentUser;
     dynamic email = '';
@@ -233,70 +227,60 @@ class doctor_home extends StatelessWidget {
                     ),
                   ],
                 )),
-            Container(
-              padding: EdgeInsets.only(
-                        right: size.width * 0.08,
-                        left: size.width * 0.08,
-              ),
-              child: StreamBuilder(
-                  stream: FirebaseFirestore.instance
-                      .collection('appointments')
-                      .where('user',
-                          isEqualTo: FirebaseAuth.instance.currentUser?.uid)
-                      .snapshots(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      FirebaseFirestore.instance
-                          .collection('doctors')
-                          .doc(FirebaseAuth.instance.currentUser?.uid)
-                          .get()
-                          .then((value) {
-                        user_appointment_codes = value.data()?['appointments'];
-                        docnames = FirebaseAuth
-                            .instance.currentUser?.displayName as String;
-                        patientnames = value.data()?['patient'];
-                        days = value.data()?['day'];
-                      });
-                      return Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-                    // user_appointment_codes = FirebaseFirestore.instance.collection('appointments').doc()
-                    int index = 0;
-                    print(user_appointment_codes);
-                    if (user_appointment_codes == null) {
-                      return Center(child: Text("No Appointments Found"));
-                    } else {
-                      return ListView.builder(
-                          itemCount: user_appointment_codes.length,
-                          itemBuilder: (BuildContext context, index) {
-                            return Card(
-                              child: ListTile(
-                                leading: Icon(Icons.calendar_today),
-                                title: Text(
-                                  patientnames!,
-                                  style: TextStyle(fontSize: 18),
-                                ),
-                                subtitle: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      patientnames[index],
-                                      style: TextStyle(fontSize: 15),
-                                    ),
-                                  ],
-                                ),
-                                trailing: Text(
-                                  days[index],
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.greenAccent),
-                                ),
-                              ),
-                            );
-                          });
-                    }
-                  }),
-            ),
+            // Container(
+            //   padding: EdgeInsets.only(
+            //     right: size.width * 0.08,
+            //     left: size.width * 0.08,
+            //   ),
+            //   child: StreamBuilder(
+            //       stream: store
+            //           .collection('appointments')
+            //           .where('user',
+            //               isEqualTo: FirebaseAuth.instance.currentUser?.uid)
+            //           .snapshots(),
+            //       builder: (context, snapshot) {
+            //         if (!snapshot.hasData) {
+            //           store
+            //               .collection('doctors')
+            //               .doc(FirebaseAuth.instance.currentUser?.uid)
+            //               .get()
+            //               .then((value) {
+            //             user_appointment_codes = value.data()?['appointments'];
+            //             patientnames = value.data()?['patientname'];
+            //             docname = user?.displayName as String;
+            //             days = value.data()?['day'];
+            //           });
+            //           return Center(
+            //             child: CircularProgressIndicator(),
+            //           );
+            //         }
+            //         // user_appointment_codes = FirebaseFirestore.instance.collection('appointments').doc()
+            //         int index = 0;
+            //         print(user_appointment_codes);
+            //         if (user_appointment_codes == null) {
+            //           return Center(child: Text("No Appointments Found"));
+            //         } else {
+            //           return ListView.builder(
+            //               itemCount: user_appointment_codes.length,
+            //               itemBuilder: (BuildContext context, index) {
+            //                 return Card(
+            //                   child: ListTile(
+            //                     leading: Icon(Icons.calendar_today),
+            //                     title: Text(
+            //                       patientnames[index],
+            //                       style: TextStyle(fontSize: 18),
+            //                     ),
+            //                     trailing: Text(
+            //                       days[index],
+            //                       style: TextStyle(
+            //                           fontSize: 15, color: Colors.greenAccent),
+            //                     ),
+            //                   ),
+            //                 );
+            //               });
+            //         }
+            //       }),
+            // ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
