@@ -1,5 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, unused_import, unnecessary_import, import_of_legacy_library_into_null_safe, must_be_immutable, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, await_only_futures, unnecessary_new, empty_constructor_bodies
 
+import 'dart:io';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -24,6 +26,10 @@ import 'package:medica/view/widgets/wavey_shape.dart';
 import 'package:medica/core/view_model/auth_view_model.dart';
 import 'package:get/get.dart';
 
+import '../allConstants/all_constants.dart';
+import '../allConstants/color_constants.dart';
+import '../allConstants/size_constants.dart';
+
 class doctor_home extends StatefulWidget {
   doctor_home() : _name = "DEFAULT";
 
@@ -43,6 +49,84 @@ class _doctor_homeState extends State<doctor_home> {
   }
 
   // final numbers = List.generate(100, (index) => '$index');
+  // final numbers = List.generate(100, (index) => '$index');
+  Future<bool> onBackPress() {
+    openDialog();
+    return Future.value(false);
+  }
+
+  Future<void> openDialog() async {
+    switch (await showDialog(
+        context: context,
+        builder: (BuildContext ctx) {
+          return SimpleDialog(
+            backgroundColor: AppColors.primaryColor,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text(
+                  'Exit Application',
+                  style: TextStyle(color: AppColors.white),
+                ),
+                Icon(
+                  Icons.exit_to_app,
+                  size: 30,
+                  color: Colors.white,
+                ),
+              ],
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(Sizes.dimen_10),
+            ),
+            children: [
+              vertical10,
+              const Text(
+                'Are you sure?',
+                textAlign: TextAlign.center,
+                style:
+                    TextStyle(color: AppColors.white, fontSize: Sizes.dimen_16),
+              ),
+              vertical15,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  SimpleDialogOption(
+                    onPressed: () {
+                      Navigator.pop(context, 0);
+                    },
+                    child: const Text(
+                      'Cancel',
+                      style: TextStyle(color: AppColors.white),
+                    ),
+                  ),
+                  SimpleDialogOption(
+                    onPressed: () {
+                      Navigator.pop(context, 1);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.circular(Sizes.dimen_8),
+                      ),
+                      padding: const EdgeInsets.fromLTRB(14, 8, 14, 8),
+                      child: const Text(
+                        'Yes',
+                        style: TextStyle(color: AppColors.spaceCadet),
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          );
+        })) {
+      case 0:
+        break;
+      case 1:
+        exit(0);
+    }
+  }
+
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseFirestore store = FirebaseFirestore.instance;
   dynamic patientnames = [];
@@ -66,8 +150,8 @@ class _doctor_homeState extends State<doctor_home> {
     return WillPopScope(
       onWillPop: () async {
         // Get.to(loginAs());
-        Get.to(() => doctor_getstarted());
-        return true;
+
+        return onBackPress();
       },
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -162,7 +246,7 @@ class _doctor_homeState extends State<doctor_home> {
                             // ignore: prefer_const_literals_to_create_immutables
                             children: [
                               CustomText(
-                                text: 'New patients',
+                                text: 'Dashboard',
                                 textStyle: TextStyle(
                                     color: primaryColor,
                                     fontSize: 22,
@@ -227,60 +311,6 @@ class _doctor_homeState extends State<doctor_home> {
                     ),
                   ],
                 )),
-            // Container(
-            //   padding: EdgeInsets.only(
-            //     right: size.width * 0.08,
-            //     left: size.width * 0.08,
-            //   ),
-            //   child: StreamBuilder(
-            //       stream: store
-            //           .collection('appointments')
-            //           .where('user',
-            //               isEqualTo: FirebaseAuth.instance.currentUser?.uid)
-            //           .snapshots(),
-            //       builder: (context, snapshot) {
-            //         if (!snapshot.hasData) {
-            //           store
-            //               .collection('doctors')
-            //               .doc(FirebaseAuth.instance.currentUser?.uid)
-            //               .get()
-            //               .then((value) {
-            //             user_appointment_codes = value.data()?['appointments'];
-            //             patientnames = value.data()?['patientname'];
-            //             docname = user?.displayName as String;
-            //             days = value.data()?['day'];
-            //           });
-            //           return Center(
-            //             child: CircularProgressIndicator(),
-            //           );
-            //         }
-            //         // user_appointment_codes = FirebaseFirestore.instance.collection('appointments').doc()
-            //         int index = 0;
-            //         print(user_appointment_codes);
-            //         if (user_appointment_codes == null) {
-            //           return Center(child: Text("No Appointments Found"));
-            //         } else {
-            //           return ListView.builder(
-            //               itemCount: user_appointment_codes.length,
-            //               itemBuilder: (BuildContext context, index) {
-            //                 return Card(
-            //                   child: ListTile(
-            //                     leading: Icon(Icons.calendar_today),
-            //                     title: Text(
-            //                       patientnames[index],
-            //                       style: TextStyle(fontSize: 18),
-            //                     ),
-            //                     trailing: Text(
-            //                       days[index],
-            //                       style: TextStyle(
-            //                           fontSize: 15, color: Colors.greenAccent),
-            //                     ),
-            //                   ),
-            //                 );
-            //               });
-            //         }
-            //       }),
-            // ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
