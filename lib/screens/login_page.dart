@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
               vertical50,
               GestureDetector(
                 onTap: () async {
-                  bool isSuccess = await authProvider.handleGoogleSignIn();
+                  bool isSuccess = await authProvider.handleDoctorGoogleSignIn();
                   if (isSuccess) {
                     Navigator.pushReplacement(
                         context,

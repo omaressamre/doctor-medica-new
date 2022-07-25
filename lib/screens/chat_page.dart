@@ -25,7 +25,6 @@ import 'package:medica/providers/profile_provider.dart';
 import 'package:medica/screens/login_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../patient/patient_home.dart';
 import '../doctor/doctor_profile_navpage.dart';
 import '../view/widgets/catalog_products.dart';
 import '../view/widgets/custom_text.dart';

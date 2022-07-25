@@ -4,8 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:medica/doctor/doctor_home.dart';
 import 'package:medica/myAppointments.dart';
-import 'package:medica/patient/patient_book.dart';
-import 'package:medica/patient/patient_home.dart';
 import 'package:medica/screens/cart_screen.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/view/widgets/catalog_products.dart';
@@ -14,6 +12,7 @@ import '../doctor/doctor_profile_navpage.dart';
 import '../view/widgets/constance.dart';
 import '../view/widgets/custom_background.dart';
 import '../view/widgets/custom_text.dart';
+import '../view/widgets/profile_icons_icons.dart';
 
 class CatalogScreen extends StatelessWidget {
   const CatalogScreen({Key? key}) : super(key: key);
@@ -66,11 +65,10 @@ class CatalogScreen extends StatelessWidget {
                         onTap: () {
                           Get.to(() => MyAppointments());
                         },
-                        child: SvgPicture.asset(
-                          'assets/images/appointment.svg',
-                          width: 25,
-                          height: 25,
+                        child: Icon(
+                          ProfileIcons.logout,
                           color: Colors.white,
+                          // textDirection: TextDirection.RTL
                         ),
                       ),
                       SizedBox(

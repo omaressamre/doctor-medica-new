@@ -4,15 +4,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:medica/doctor/doctor_home.dart';
 import 'package:medica/myAppointments.dart';
-import 'package:medica/patient/patient_book.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/view/widgets/cart_products.dart';
 import 'package:medica/view/widgets/cart_total.dart';
 import 'package:medica/view/widgets/constance.dart';
 import 'package:medica/view/widgets/custom_text.dart';
+import 'package:medica/view/widgets/profile_icons_icons.dart';
 
 import '../controllers/cart_controller.dart';
-import '../patient/patient_home.dart';
 import '../doctor/doctor_profile_navpage.dart';
 import '../view/widgets/custom_background.dart';
 
@@ -67,11 +66,10 @@ class CartScreen extends StatelessWidget {
                         onTap: () {
                           Get.to(() => MyAppointments());
                         },
-                        child: SvgPicture.asset(
-                          'assets/images/appointment.svg',
-                          width: 25,
-                          height: 25,
+                        child: Icon(
+                          ProfileIcons.logout,
                           color: Colors.white,
+                          // textDirection: TextDirection.RTL
                         ),
                       ),
                       Container(

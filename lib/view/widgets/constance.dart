@@ -1,7 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:medica/patient/patient_home.dart';
 
 const Color primaryColor = Color(0xff612EAA);
 const Color primaryColorShadow = Color.fromARGB(19, 109, 5, 255);
@@ -16,4 +15,3 @@ const Color primarybutton = Color(0xff603EBC);
 
 const k_keepMeLoggedIn = 'KeepMeLoggedIn';
 const k_dockeepMeLoggedIn = 'docKeepMeLoggedIn';
-String current_user = patient_home() as String;

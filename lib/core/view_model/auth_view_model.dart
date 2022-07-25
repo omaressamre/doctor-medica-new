@@ -11,7 +11,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:medica/doctor/doctor_home.dart';
 import 'package:path/path.dart';
-import 'package:medica/patient/patient_home.dart';
 
 class AuthViewModel extends GetxController {
 
@@ -62,50 +61,8 @@ class AuthViewModel extends GetxController {
     );
   }
 
-  void signInWithEmailAndPassword() async {
-    try {
-      await _auth.signInWithEmailAndPassword(email: email, password: password);
-       FirebaseFirestore.instance
-          .collection('users')
-          .doc((await FirebaseAuth.instance.currentUser)?.uid)
-          .get()
-          .then((ds) {
-        get_name = ds.get('name').toString();
-        print(get_name);
-        Get.offAll(() => patient_home.withuser(get_name = ds.get('name')));
-      }).catchError((e) {
-        print(e);
-      });
-       
-    } catch (FirebaseException) {
-      print(FirebaseException);
-      Get.snackbar(
-        'Error login account',
-        FirebaseException.toString(),
-        colorText: Colors.black,
-        snackPosition: SnackPosition.BOTTOM,
-      );
-    }
-  }
+ 
 
-  void createAccountWithEmailAndPassword() async {
-    try {
-      await _auth
-          .createUserWithEmailAndPassword(email: email, password: password)
-          .then((_user) {
-        FirebaseFirestore.instance
-            .collection('users')
-            .doc(_user.user!.uid)
-            .set({
-          'id': _user.user?.uid,
-          'email': email,
-          'password': password,
-          'name': name
-        });
-      });
-      Get.offAll(() => patient_home.withuser(name));
-    } catch (firebaseAuthException) {}
-  }
 
 void signInDoctorWithEmailAndPassword() async {
     get_name = "...";

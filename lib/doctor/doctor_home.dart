@@ -15,7 +15,6 @@ import 'package:medica/doctor/doctor_login.dart';
 import 'package:medica/doctor/doctor_profile_navpage.dart';
 import 'package:medica/doctor/selectSpeciality.dart';
 import 'package:medica/myAppointments.dart';
-import 'package:medica/patient/patient_book.dart';
 import 'package:medica/screens/catalog_screen.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/view/widgets/HomeCurve.dart';
@@ -24,7 +23,6 @@ import 'package:medica/view/widgets/constance.dart';
 import 'package:medica/view/widgets/custom_background.dart';
 import 'package:medica/view/widgets/custom_text.dart';
 import 'package:medica/view/widgets/custom_text_form_field.dart';
-import 'package:medica/view/widgets/depts.dart';
 import 'package:medica/view/widgets/profile_icons_icons.dart';
 import 'package:medica/view/widgets/wavey_shape.dart';
 import 'package:medica/core/view_model/auth_view_model.dart';
@@ -183,10 +181,13 @@ class _doctor_homeState extends State<doctor_home> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Icon(
-                        ProfileIcons.logout,
-                        color: Colors.white,
-                        // textDirection: TextDirection.RTL
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          ProfileIcons.logout,
+                          color: Colors.white,
+                          // textDirection: TextDirection.RTL
+                        ),
                       ),
                       Column(
                         children: [

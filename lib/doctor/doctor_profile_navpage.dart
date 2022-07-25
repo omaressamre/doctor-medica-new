@@ -12,9 +12,6 @@ import 'package:medica/doctor/doctor_home.dart';
 import 'package:medica/doctor/doctor_register.dart';
 import 'package:medica/myAppointments.dart';
 import 'package:medica/patient/aboutus.dart';
-import 'package:medica/patient/find_doctor_near.dart';
-import 'package:medica/patient/patient_book.dart';
-import 'package:medica/patient/patient_home.dart';
 import 'package:medica/doctor/doctor_profiledata_navpage.dart';
 import 'package:medica/providers/auth_provider.dart';
 import 'package:medica/screens/home_page.dart';
@@ -25,7 +22,6 @@ import 'package:medica/view/widgets/constance.dart';
 import 'package:medica/view/widgets/custom_background.dart';
 import 'package:medica/view/widgets/custom_text.dart';
 import 'package:medica/view/widgets/custom_text_form_field.dart';
-import 'package:medica/view/widgets/depts.dart';
 import 'package:medica/view/widgets/profile_icons_icons.dart';
 import 'package:medica/view/widgets/wavey_shape.dart';
 import 'package:medica/core/view_model/auth_view_model.dart';
@@ -84,25 +80,32 @@ class doctor_profilenav extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      SvgPicture.asset(
-                        'assets/images/appointment.svg',
-                        width: 25,
-                        height: 25,
-                        color: Colors.white,
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          ProfileIcons.logout,
+                          color: Colors.white,
+                          // textDirection: TextDirection.RTL
+                        ),
                       ),
-                      Container(
-                          margin: EdgeInsets.only(right: size.width * 0.03),
-                          child: picture != ''
-                              ? CircleAvatar(
-                                  backgroundImage: NetworkImage(picture))
-                              : CircleAvatar(backgroundColor: Colors.green)),
-                      CustomText(
-                        text: name,
-                        textStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w600),
+                      Row(
+                        children: [
+                          Container(
+                              margin: EdgeInsets.only(right: size.width * 0.03),
+                              child: picture != ''
+                                  ? CircleAvatar(
+                                      backgroundImage: NetworkImage(picture))
+                                  : CircleAvatar(
+                                      backgroundColor: Colors.green)),
+                          CustomText(
+                            text: name,
+                            textStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ],
                       ),
                       Image.asset('assets/images/Notify.png')
                     ],
