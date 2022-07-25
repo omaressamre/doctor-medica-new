@@ -59,7 +59,7 @@ class doctor_profilenav extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async {
         // Get.to(loginAs());
-        Get.to(() => patient_home());
+        Get.to(() => doctor_home());
         return true;
       },
       child: Scaffold(
@@ -153,7 +153,10 @@ class doctor_profilenav extends StatelessWidget {
                             child: Row(
                               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                SvgPicture.asset('assets/images/User.svg',color: secondaryColor,),
+                                SvgPicture.asset(
+                                  'assets/images/User.svg',
+                                  color: secondaryColor,
+                                ),
                                 SizedBox(width: size.width * 0.04),
                                 CustomText(
                                   text: 'Profile',
@@ -243,7 +246,9 @@ class doctor_profilenav extends StatelessWidget {
                               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 SvgPicture.asset(
-                                    'assets/images/information-svgrepo-com.svg',color: secondaryColor,),
+                                  'assets/images/information-svgrepo-com.svg',
+                                  color: secondaryColor,
+                                ),
                                 SizedBox(width: size.width * 0.04),
                                 CustomText(
                                   text: 'About us',

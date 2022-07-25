@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:medica/doctor/doctor_home.dart';
 import 'package:medica/myAppointments.dart';
 import 'package:medica/patient/patient_book.dart';
 import 'package:medica/screens/home_page.dart';
@@ -270,7 +271,7 @@ class CartScreen extends StatelessWidget {
                     children: [
                       TextButton(
                         onPressed: () {
-                          Get.to(() => patient_home());
+                          Get.to(() => doctor_home());
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -284,27 +285,6 @@ class CartScreen extends StatelessWidget {
                             ),
                             CustomText(
                               text: 'Home',
-                              textStyle:
-                                  TextStyle(color: primaryColorOutOfFocus),
-                            )
-                          ],
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Get.to(() => patient_book());
-                        },
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset(
-                                'assets/images/clipboardNavBarHome.svg',
-                                color: primaryColorOutOfFocus),
-                            SizedBox(
-                              height: size.height * 0.008,
-                            ),
-                            CustomText(
-                              text: 'Consult',
                               textStyle:
                                   TextStyle(color: primaryColorOutOfFocus),
                             )

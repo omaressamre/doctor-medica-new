@@ -8,7 +8,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:medica/allConstants/color_constants.dart';
+import 'package:medica/doctor/doctor_home.dart';
 import 'package:medica/myAppointments.dart';
+import 'package:medica/screens/home_page.dart';
 import 'package:medica/view/widgets/constance.dart';
 import 'package:medica/view/widgets/custom_background.dart';
 import 'package:provider/provider.dart';
@@ -324,7 +326,7 @@ class _ChatPageState extends State<ChatPage> {
                                       margin: EdgeInsets.only(
                                           bottom: size.height * .02),
                                       child: Text(
-                                        'Dr. ${widget.peerNickname}'.trim(),
+                                        '${widget.peerNickname}'.trim(),
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontFamily: 'dmsans',
@@ -386,7 +388,7 @@ class _ChatPageState extends State<ChatPage> {
                                   children: [
                                     TextButton(
                                       onPressed: () {
-                                        Get.to(() => patient_home());
+                                        Get.to(() => doctor_home());
                                       },
                                       child: Column(
                                         mainAxisAlignment:
@@ -408,28 +410,9 @@ class _ChatPageState extends State<ChatPage> {
                                       ),
                                     ),
                                     TextButton(
-                                      onPressed: () {},
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SvgPicture.asset(
-                                            'assets/images/clipboardNavBarHome.svg',
-                                            color: primaryColorOutOfFocus,
-                                          ),
-                                          SizedBox(
-                                            height: size.height * 0.008,
-                                          ),
-                                          CustomText(
-                                            text: 'Consult',
-                                            textStyle: TextStyle(
-                                                color: primaryColorOutOfFocus),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Get.to(HomePage());
+                                      },
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,

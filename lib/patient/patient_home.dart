@@ -41,7 +41,7 @@ class patient_home extends StatelessWidget {
     Depts(
       deptName: 'Biochem',
       icon: 'assets/images/depts/BioChem.png',
-      onPressed: () {      },
+      onPressed: () {},
     ),
     Depts(
       deptName: 'Research',
@@ -249,8 +249,7 @@ class patient_home extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(15)))),
-                          onPressed: () {
-                          },
+                          onPressed: () {},
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: size.width * 0.03),

@@ -25,7 +25,7 @@ class _MyAppointmentsState extends State<MyAppointments> {
           bottomRight: Radius.circular(25),
           bottomLeft: Radius.circular(25),
         )),
-        backgroundColor: primaryColor,
+        backgroundColor: linkColor,
         centerTitle: true,
         title: Text('My Appointments'),
       ),
