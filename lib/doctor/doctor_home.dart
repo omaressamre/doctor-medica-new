@@ -27,10 +27,12 @@ import 'package:medica/view/widgets/profile_icons_icons.dart';
 import 'package:medica/view/widgets/wavey_shape.dart';
 import 'package:medica/core/view_model/auth_view_model.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 import '../allConstants/all_constants.dart';
 import '../allConstants/color_constants.dart';
 import '../allConstants/size_constants.dart';
+import '../providers/auth_provider.dart';
 
 class doctor_home extends StatefulWidget {
   doctor_home() : _name = "DEFAULT";
@@ -137,6 +139,7 @@ class _doctor_homeState extends State<doctor_home> {
   dynamic times = [];
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context);
     var user_appointment_codes = [];
 
     final Size size = MediaQuery.of(context).size;
@@ -182,7 +185,9 @@ class _doctor_homeState extends State<doctor_home> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          authProvider.SignOut();
+                        },
                         icon: Icon(
                           ProfileIcons.logout,
                           color: Colors.white,

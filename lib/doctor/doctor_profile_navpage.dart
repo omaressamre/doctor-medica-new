@@ -81,7 +81,9 @@ class doctor_profilenav extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          authProvider.SignOut();
+                        },
                         icon: Icon(
                           ProfileIcons.logout,
                           color: Colors.white,
@@ -285,7 +287,7 @@ class doctor_profilenav extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(40)),
                           ),
                           onPressed: () {
-                            authProvider.googleSignOut();
+                            authProvider.SignOut();
                           },
                           child: Padding(
                             padding: EdgeInsets.symmetric(

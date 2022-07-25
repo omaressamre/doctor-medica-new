@@ -9,6 +9,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:medica/doctor/doctor_home.dart';
 import 'package:medica/doctor/doctor_profile_navpage.dart';
+import 'package:medica/providers/auth_provider.dart';
 import 'package:medica/view/widgets/HomeCurve.dart';
 import 'package:medica/view/widgets/LnRCurve.dart';
 import 'package:medica/view/widgets/constance.dart';
@@ -19,6 +20,7 @@ import 'package:medica/view/widgets/profile_icons_icons.dart';
 import 'package:medica/view/widgets/wavey_shape.dart';
 import 'package:medica/core/view_model/auth_view_model.dart';
 import 'package:path/path.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class patient_profiledata extends StatelessWidget {
@@ -34,6 +36,7 @@ class patient_profiledata extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final user = FirebaseAuth.instance.currentUser;
+    final authProvider = Provider.of<AuthProvider>(context);
     dynamic email = '';
     dynamic name = '';
     dynamic picture = '';
@@ -70,19 +73,34 @@ class patient_profiledata extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      SvgPicture.asset(
-                        'assets/images/appointment.svg',
-                        width: 25,
-                        height: 25,
-                        color: Colors.white,
+                      IconButton(
+                        onPressed: () {
+                          authProvider.SignOut();
+                        },
+                        icon: Icon(
+                          ProfileIcons.logout,
+                          color: Colors.white,
+                          // textDirection: TextDirection.RTL
+                        ),
                       ),
-                      CustomText(
-                        text: name,
-                        textStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w600),
+                      Row(
+                        children: [
+                          Container(
+                              margin: EdgeInsets.only(right: size.width * 0.03),
+                              child: picture != ''
+                                  ? CircleAvatar(
+                                      backgroundImage: NetworkImage(picture))
+                                  : CircleAvatar(
+                                      backgroundColor: Colors.green)),
+                          CustomText(
+                            text: name,
+                            textStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ],
                       ),
                       Image.asset('assets/images/Notify.png')
                     ],

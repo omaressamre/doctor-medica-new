@@ -7,8 +7,10 @@ import 'package:medica/myAppointments.dart';
 import 'package:medica/screens/cart_screen.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/view/widgets/catalog_products.dart';
+import 'package:provider/provider.dart';
 
 import '../doctor/doctor_profile_navpage.dart';
+import '../providers/auth_provider.dart';
 import '../view/widgets/constance.dart';
 import '../view/widgets/custom_background.dart';
 import '../view/widgets/custom_text.dart';
@@ -20,6 +22,7 @@ class CatalogScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final authProvider = Provider.of<AuthProvider>(context);
     final user = FirebaseAuth.instance.currentUser;
     dynamic email = '';
     dynamic name = '';
@@ -63,7 +66,7 @@ class CatalogScreen extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Get.to(() => MyAppointments());
+                          authProvider.SignOut();
                         },
                         child: Icon(
                           ProfileIcons.logout,

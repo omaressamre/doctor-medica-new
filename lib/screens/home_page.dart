@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
   TextEditingController searchTextEditingController = TextEditingController();
 
   Future<void> googleSignOut() async {
-    authProvider.googleSignOut();
+    authProvider.SignOut();
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const LoginPage()));
   }

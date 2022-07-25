@@ -4,12 +4,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:medica/doctor/doctor_home.dart';
 import 'package:medica/myAppointments.dart';
+import 'package:medica/providers/auth_provider.dart';
 import 'package:medica/screens/home_page.dart';
 import 'package:medica/view/widgets/cart_products.dart';
 import 'package:medica/view/widgets/cart_total.dart';
 import 'package:medica/view/widgets/constance.dart';
 import 'package:medica/view/widgets/custom_text.dart';
 import 'package:medica/view/widgets/profile_icons_icons.dart';
+import 'package:provider/provider.dart';
 
 import '../controllers/cart_controller.dart';
 import '../doctor/doctor_profile_navpage.dart';
@@ -22,6 +24,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final authProvider = Provider.of<AuthProvider>(context);
     final user = FirebaseAuth.instance.currentUser;
     dynamic email = '';
     dynamic name = '';
@@ -64,7 +67,7 @@ class CartScreen extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Get.to(() => MyAppointments());
+                          authProvider.SignOut();
                         },
                         child: Icon(
                           ProfileIcons.logout,
